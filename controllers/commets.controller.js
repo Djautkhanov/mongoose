@@ -2,7 +2,7 @@ const Comment = require("../Model/Comment.model");
 
 module.exports.commentsController = {
   getCommentByNewsId: function (req, res) {
-    Comment.find(req.params.newsId)
+    Comment.find({newsId: req.params.newsId})
       .then((comm) => {
         res.json(comm);
       })
